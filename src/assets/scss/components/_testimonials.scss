@@ -1,0 +1,109 @@
+.testimonials {
+  background: $black url('../media/images/testimonial-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__block {
+    display: block;
+
+    @include breakpoint(largeTablet, min-width) {
+      display: flex;
+    }  
+  }
+
+  &__info {
+    color: $white;
+    margin-bottom: px-to-rem(15);
+
+    &--bold {
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__quote {
+    @include breakpoint(largeTablet, min-width) {
+      width: 75%;
+    }
+  }
+
+  &__author {
+    margin-top: px-to-rem(20);
+
+    @include breakpoint(largeTablet, min-width) {
+      width: 25%;
+      margin-top: px-to-rem(0);
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    font: var(--font-heading-h4);
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__copy {
+    font: var(--font-large-body-copy);
+    color: $white;
+
+    @include breakpoint(largeTablet, min-width) {
+      border-right: 1px solid $white;
+      padding: px-to-rem(0) px-to-rem(20) px-to-rem(0) px-to-rem(0);
+    }
+
+    &--open-quote,
+    &--close-quote {
+      font-size: px-to-rem(100);
+      line-height: px-to-rem(0);
+      position: relative;
+      vertical-align: bottom;
+    }
+
+    &--open-quote {
+      left: px-to-rem(-5);
+      bottom: px-to-rem(-5);
+    }
+
+    &--close-quote {
+      left: px-to-rem(-5);
+      bottom: px-to-rem(-10);
+    }
+  }
+
+  &__author {
+    @include breakpoint(largeTablet, min-width) {
+      padding: px-to-rem(0) px-to-rem(0) px-to-rem(0) px-to-rem(30);
+    }
+
+    &--name,
+    &--role {
+      color: $white;
+    }
+  }
+
+  .glide__bullets {
+    bottom: px-to-rem(0);
+    position: relative;
+    padding-top: px-to-rem(40);
+
+    .glide__bullet {
+      width: px-to-rem(20);
+      height: px-to-rem(20);
+
+      &:not(.glide__bullet--active) {
+        background-color: $white;
+      }
+
+      &:hover,
+      &:focus {
+        border: none;
+      }
+    }
+
+    .glide__bullet--active {
+      background-color: $bluejay;
+    }
+  }
+}

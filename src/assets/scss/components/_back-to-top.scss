@@ -1,0 +1,30 @@
+.back-to-top {
+  display: block;
+  position: fixed;
+  bottom: px-to-rem(10);
+  right: px-to-rem(10);
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+
+  @include breakpoint(desktop, min-width) {
+    bottom: px-to-rem(15);
+    right: px-to-rem(15);
+  }
+
+  &__text {
+    font: var(--font-small-print);
+    text-transform: uppercase;
+    color: $bluejay;
+    display: block;
+    text-shadow: 0 px-to-rem(1) px-to-rem(1) $white;
+  }
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}

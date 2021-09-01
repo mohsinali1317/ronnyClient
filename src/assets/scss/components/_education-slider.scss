@@ -1,0 +1,208 @@
+.education-slider {
+  &__green {
+    background-color: $ewb;
+  }
+
+  &__blue {
+    background-color: $uh;
+  }
+
+  &__pink {
+    background-color: $justit;
+  }
+
+  &__previous {
+    background-image: url('../media/images/white-arrow-left.png');
+  }
+
+  &__next {
+    background-image: url('../media/images/white-arrow-right.png');
+  }
+
+  &__previous,
+  &__next {
+    width: px-to-rem(64);
+    height: px-to-rem(64);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+  }
+
+  &__button:link,
+  &__button:visited {
+    @include browser-prefix('transition', 'all 500ms ease');
+    @include browser-prefix('border-radius', '5px');
+    @include browser-prefix('box-shadow', '2px 2px 0 #2b547e');
+    border: 2px solid $bluejay;
+    font: var(--font-body-copy);
+    color: $bluejay;
+    background-color: $transparent;
+    width: px-to-rem(200);
+    padding: px-to-rem(10) px-to-rem(15);
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $white;
+      background-color: $bluejay;
+    }
+  }
+
+  &__heading {
+    text-transform: capitalize;
+    color: $black;
+  }
+
+  &__body-copy {
+    color: $black;
+    margin-bottom: px-to-rem(15);
+  }
+
+  &__header {
+    padding: px-to-rem(12);
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(tablet, min-width) {
+      padding: px-to-rem(20);
+    }
+
+    &--box {
+      display: flex;
+      justify-content: center;
+      margin-right: px-to-rem(15);
+      background-color: $white;
+      height: px-to-rem(55);
+      width: px-to-rem(55);
+
+      img {
+        align-self: center;
+      }
+    }
+
+    &--text {
+      font: var(--font-education-big-heading-mobile);
+      text-transform: uppercase;
+      color: $white;
+
+      @include breakpoint(tablet, min-width) {
+        font: var(--font-education-big-heading-desktop);
+      }
+
+      &-small {
+        font: var(--font-education-small-heading);
+        display: block;
+        margin-bottom: px-to-rem(5);
+      }
+    }
+  }
+
+  &__date {
+    position: relative;
+    display: inline-block;
+    width: px-to-rem(135);
+    font: var(--font-small-print);
+    margin-bottom: px-to-rem(25);
+
+    &--stamp {
+      @include browser-prefix('border-radius', '32px');
+      width: 100%;
+      padding: px-to-rem(5) px-to-rem(15);
+      background-color: $white;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: $font-weight-bold;
+    }
+
+    &--green {
+      @include browser-prefix('box-shadow', '-0.1em 0.1em 0 0.15em #006637');
+      color: $ewb;
+    }
+
+    &--pink {
+      @include browser-prefix('box-shadow', '-0.1em 0.1em 0 0.15em #b51969');
+      color: $justit;
+    }
+
+    &--blue {
+      @include browser-prefix('box-shadow', '-0.1em 0.1em 0 0.15em #009ee1');
+      color: $uh;
+    }
+  }
+
+  &__body {
+    padding: px-to-rem(12);
+    background-color: $white;
+
+    @include breakpoint(tablet, min-width) {
+      padding: px-to-rem(20);
+    }
+  }
+
+  .glide__arrows {
+    display: flex;
+    justify-content: space-between;
+
+    .glide__arrow {
+      @include browser-prefix('box-shadow', 'none');
+      position: relative;
+      top: px-to-rem(25);
+      padding: px-to-rem(0);
+      border: none;
+      text-shadow: none;
+
+      &--left {
+        left: px-to-rem(-15);
+
+        @include breakpoint(mobile, min-width) {
+          left: px-to-rem(0);
+        }
+      }
+
+      &--right {
+        right: px-to-rem(-15);
+
+        @include breakpoint(mobile, min-width) {
+          right: px-to-rem(0);
+        }
+      }
+    }
+  }
+
+  .glide__bullets {
+    top: px-to-rem(0);
+    bottom: auto;
+
+    .glide__bullet {
+      @include browser-prefix('box-shadow', 'none');
+      width: px-to-rem(30);
+      height: px-to-rem(30);
+      margin: px-to-rem(0) px-to-rem(15);
+      border: none;
+
+      @include breakpoint(tablet, min-width) {
+        width: px-to-rem(50);
+        height: px-to-rem(50);
+        margin: px-to-rem(0) px-to-rem(25);
+      }
+
+      &:first-child {
+        background-color: $justit;
+      }
+
+      &:nth-child(2) {
+        background-color: $ewb;
+      }
+
+      &:nth-child(3) {
+        background-color: $ewb;
+      }
+
+      &:nth-child(4) {
+        background-color: $uh;
+      }
+    }
+  }
+}

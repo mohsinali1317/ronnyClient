@@ -1,0 +1,112 @@
+.projects {
+  &__copy {
+    font: var(--font-large-body-copy);
+    margin: px-to-rem(25) px-to-rem(0);
+    text-align: center;
+    color: $black;
+  }
+
+  &__box {
+    margin-bottom: px-to-rem(30);
+
+    &:hover {
+      .projects__box--line {
+        width: px-to-rem(40);
+      }
+    }
+
+    &--header {
+      @include browser-prefix('border-top-left-radius', '8px');
+      @include browser-prefix('border-top-right-radius', '8px');
+      padding: px-to-rem(10) px-to-rem(15);
+    }
+
+    &--title {
+      font: var(--font-heading-h5-bold);
+      text-transform: uppercase;
+      color: $white;
+      display: block;
+      text-align: center;
+    }
+    
+    &--body {
+      position: relative;
+    }
+
+    &--overlay {
+      background-color: rgba($black, .6);
+      position: absolute;
+      top: px-to-rem(0);
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &--details {
+      position: absolute;
+      top: px-to-rem(0);
+      padding: px-to-rem(0) px-to-rem(15);
+      z-index: 1;
+      height: 100%;
+      width: calc(100% - 30px);
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--copy {
+      color: $white;
+      z-index: 2;
+    }
+
+    &--line {
+      @include browser-prefix('transition', 'all 500ms ease');
+      width: px-to-rem(0);
+      height: px-to-rem(1);
+      background-color: $white;
+      display: block;
+      margin-top: px-to-rem(10);
+    }
+
+    &--footer {
+      display: grid;
+
+      &-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &--btn,
+    &--btn:link,
+    &--btn:visited {
+      @include browser-prefix('appearance', 'none');
+      @include browser-prefix('box-sizing', 'content-box');
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: var(--font-small-print);
+      padding: px-to-rem(10);
+      color: $white;
+      text-decoration: none;
+      border-right: 1px solid $white;
+      text-transform: uppercase;
+      height: px-to-rem(25);
+      cursor: pointer;
+
+      &:first-child {
+        @include browser-prefix('border-bottom-left-radius', '8px');
+      }
+
+      &:last-child {
+        border-right: none;
+        @include browser-prefix('border-bottom-right-radius', '8px');
+      }
+    }
+  }
+}

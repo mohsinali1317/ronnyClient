@@ -1,0 +1,129 @@
+.divider {
+  &--bg {
+    background-color: $bluejay;
+  }
+
+  &--spacing {
+    padding: px-to-rem(50) px-to-rem(0) px-to-rem(35) px-to-rem(0);
+  }
+
+  &__heading {
+    font: var(--font-heading-h2);
+    margin: px-to-rem(0);
+
+    &--light {
+      color: $white;
+    }
+
+    &--dark {
+      color: $black;
+    }
+  }
+
+  &__underline {
+    display: block;
+    width: px-to-rem(250);
+
+    &--light-bg:after,
+    &--light {
+      background-color: $white;
+    }
+
+    &--dark-bg:after,
+    &--dark {
+      background-color: $bluejay;
+    }
+
+    &--line {
+      position: relative;
+      display: inline-block;
+      height: px-to-rem(5);
+      text-align: center;
+      width: 100%;
+      top: px-to-rem(-15);
+
+      &:after {
+        content: '';
+        background-image: url('../media/images/icons/section-icons.png');
+        background-repeat: no-repeat;
+        width: px-to-rem(30);
+        height: px-to-rem(19);
+        display: inline-block;
+        position: absolute;
+        top: px-to-rem(-7);
+      }  
+    }
+
+    &--users:after {
+      background-position: px-to-rem(-210) px-to-rem(-20);
+    }
+
+    &--book:after {
+      background-position: px-to-rem(-180) px-to-rem(-20);
+    }
+
+    &--building:after {
+      background-position: px-to-rem(-150) px-to-rem(-20);
+    }
+
+    &--cubes:after {
+      background-position: px-to-rem(-240) px-to-rem(-20);
+    }
+
+    &--hash:after {
+      background-position: px-to-rem(-120) px-to-rem(-20);
+    }
+
+    &--magnify-glass:after {
+      background-position: px-to-rem(0) px-to-rem(-20);
+    }
+
+    &--thumbs-right:after {
+      background-position: px-to-rem(-60) px-to-rem(-20);
+    }
+
+    &--cup:after {
+      background-position: px-to-rem(-90) px-to-rem(0);
+    }
+
+    &--lightbulb:after {
+      background-position: px-to-rem(-30) px-to-rem(0);
+    }
+  }
+}
+
+.triangle {
+  width: px-to-rem(0);
+  height: px-to-rem(0); 
+  border-left: px-to-rem(20) solid $transparent;
+  border-right: px-to-rem(20) solid $transparent;
+  border-top: px-to-rem(20) solid $bluejay;
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+}
+
+.pattern-divider {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: px-to-rem(0);
+    width: 100%;
+    height: px-to-rem(30);
+    background-repeat: repeat-x;
+    z-index: 3;
+  }
+
+  &:before {
+    top: 0;
+    background-image: url('../media/images/pattern-top.png');
+  }
+
+  &:after {
+    bottom: 0;
+    background-image: url('../media/images/pattern-bottom.png');
+  }
+}

@@ -1,0 +1,162 @@
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column-reverse;
+
+  @include breakpoint(desktop, min-width) {
+    flex-flow: column;
+  }
+
+  &__columns {
+    @media screen and (max-width: 1024px) {
+      flex-flow: column-reverse;
+      padding-top: px-to-rem(54);
+    }
+  }
+
+  &__left-column {
+    @include breakpoint(desktop, min-width) {
+      display: flex;
+      height: 100%;
+    }
+
+    @media screen and (max-width: 1024px) {
+      max-width: px-to-rem(700);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      align-self: flex-end;
+    }
+  }
+
+  &__right-column {
+    @media screen and (max-width: 1024px) {
+      text-align: center;
+      padding-top: px-to-rem(50);
+      padding-bottom: px-to-rem(50);
+    }
+  }
+
+  &__container {
+    height: 100%;
+    width: 100%;
+
+    @include breakpoint(desktop, min-width) {
+      height: calc(100vh - 74px);
+    }
+  
+    @media screen and (min-width: 1025px) and (max-height: 700px) {
+      height: px-to-rem(626);
+    }
+  }
+
+  &__full-height {
+    height: 100%;
+    align-items: center;
+  }
+
+  &__heading {
+    color: $white;
+    text-transform: uppercase;
+    margin-left: px-to-rem(15);
+  }
+
+  &__text,
+  &__subheading {
+    text-transform: capitalize;
+
+    @media screen and (max-width: 575px) {
+      font: var(--font-subheading-h2-mobile);
+    }
+
+    @include breakpoint(mobile, min-width) {
+      @include breakpoint(desktop, max-width) {
+        font: var(--font-subheading-h2-tablet);
+      }
+    }
+  
+    @include breakpoint(desktop, min-width) {
+      font: var(--font-subheading-h2);
+    }
+  }
+
+  &__heading,
+  &__text {
+    display: inline;
+  }
+
+  &__bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+
+    &--early-morning {
+      background-image: url('../media/images/intro/background/early-morning.jpg');
+
+      .intro__colour {
+        color: $early-morning;
+      }
+    }
+
+    &--morning {
+      background-image: url('../media/images/intro/background/morning.jpg');
+
+      .intro__colour {
+        color: $morning;
+      }
+    }
+
+    &--lunch {
+      background-image: url('../media/images/intro/background/lunch.jpg');
+
+      .intro__colour {
+        color: $lunch;
+      }
+    }
+
+    &--afternoon {
+      background-image: url('../media/images/intro/background/afternoon.jpg');
+
+      .intro__colour {
+        color: $afternoon;
+      }
+    }
+
+    &--evening {
+      background-image: url('../media/images/intro/background/evening.jpg');
+
+      .intro__colour {
+        color: $evening;
+      }
+    }
+
+    &--dinner {
+      background-image: url('../media/images/intro/background/dinner.jpg');
+
+      .intro__colour {
+        color: $dinner;
+      }
+    }
+
+    &--late-evening {
+      background-image: url('../media/images/intro/background/late-evening.jpg');
+
+      .intro__colour {
+        color: $late-evening;
+      }
+    }
+
+    &--night {
+      background-image: url('../media/images/intro/background/night.jpg');
+
+      .intro__colour {
+        color: $dinner;
+      }
+    }
+  }
+}

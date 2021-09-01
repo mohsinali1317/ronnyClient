@@ -1,0 +1,75 @@
+.badge {
+  @include browser-prefix('transition', 'transform 0.3s ease');
+  position: absolute;
+  top: px-to-rem(50);
+  left: px-to-rem(0);
+  letter-spacing: px-to-rem(2);
+  color: $white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  transform: rotate(-14deg);
+  text-align: center;
+  filter: drop-shadow(0.25em 0.7em 0.95em rgba($black, .8));
+  font: var(--font-body-copy);
+
+  @include breakpoint(tablet, min-width) {
+    display: flex;
+  }
+
+  @include breakpoint(desktop, min-width) {
+    top: px-to-rem(0);
+  }  
+
+  &:before {
+    @include browser-prefix('transition', 'opacity 0.3s linear');
+    @include browser-prefix('border-radius', '100%');
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: px-to-rem(150);
+    height: px-to-rem(150);
+    background-color: $bluejay;
+    opacity: 0.8;
+  }
+
+  &:hover {
+    color: $white;
+    text-decoration: none;  
+    transform: rotate(-10deg) scale(1.05);
+
+    &:before {
+      opacity: 0.9;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    z-index: 0;
+    width: px-to-rem(150);
+    height: px-to-rem(150);
+
+    text {
+      font: var(--font-body-copy);
+    }
+  }
+
+  &__text {
+    @include browser-prefix('border-radius', '10px');
+    display: block;
+    background-color: $bluejay;
+    padding: px-to-rem(5) px-to-rem(10);
+    z-index: 1;
+    min-width: px-to-rem(175);
+    border: px-to-rem(1) solid $white;
+    text-transform: uppercase;
+  }
+}

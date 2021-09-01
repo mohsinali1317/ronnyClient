@@ -1,0 +1,225 @@
+.navigation {
+  @include browser-prefix('transition', 'all 500ms ease');
+  border-bottom: 1px solid $bluejay;
+  background-color: $white;
+  width: 100%;
+  position: fixed;
+  top: px-to-rem(0);
+  z-index: 6;
+
+  @include breakpoint(desktop, min-width) {
+    position: relative;
+
+    &--sticky {
+      position: fixed;
+      top: px-to-rem(0);
+    }
+  }
+  
+  &__logo {
+    display: block;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: px-to-rem(5) px-to-rem(15);
+
+    @include breakpoint(desktop, min-width) {
+      width: auto;
+      padding: px-to-rem(0);
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1024px) {
+      padding: px-to-rem(0);
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-flow: column;
+
+    @include breakpoint(desktop, min-width) {
+      flex-flow: row;
+    }
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
+
+    &--item {
+      @media screen and (max-width: 1024px) {
+        width: 100%;
+
+        &:first-child {
+          .navigation__list--link {
+            border-top: px-to-rem(1) solid lighten($bluejay, 50%);
+          }
+        }
+
+        &:last-child {
+          .navigation__list--link {
+            border: none;
+          }
+        }
+      }
+    }
+
+    &--link {
+      @include browser-prefix('box-sizing', 'border-box');
+      @include browser-prefix('transition', 'all 500ms ease');
+      font: var(--font-body-copy);
+      color: $bluejay;
+      text-decoration: none;
+      text-transform: capitalize;
+      display: flex;
+      background-color: $white;
+
+      @media screen and (max-width: 1024px) {
+        padding: px-to-rem(15) px-to-rem(20) px-to-rem(15) px-to-rem(10);
+        border-left: px-to-rem(10) solid $transparent;
+        justify-content: center;
+        border-bottom: px-to-rem(1) solid lighten($bluejay, 50%);
+      }
+
+      @include breakpoint(desktop, min-width) {
+        padding: px-to-rem(25) px-to-rem(15) px-to-rem(15) px-to-rem(15);
+        border-bottom: px-to-rem(10) solid $transparent;
+      }
+
+      &:hover {
+        @include breakpoint(desktop, min-width) {
+          color: $white;
+          border-bottom: px-to-rem(10) solid $bluejay;
+          background-color: lighten($bluejay, 10%);
+        }
+      }
+    }
+
+    &--active {
+      color: $white;
+      background-color: lighten($bluejay, 10%);
+
+      @media screen and (max-width: 1024px) {
+        border-left: px-to-rem(10) solid $bluejay;
+      }
+
+      @include breakpoint(desktop, min-width) {
+        border-bottom: px-to-rem(10) solid $bluejay;
+      }
+    }
+  }
+
+  &__navbar {
+    display: none;
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+    }
+
+    @include breakpoint(desktop, min-width) {
+      display: flex;
+    }
+
+    &--opened {
+      @media screen and (max-width: 1024px) {
+        display: flex;
+      }
+    }
+  }
+
+  &__burger-menu {
+    @include browser-prefix('appearance', 'none');
+    border: none;
+    background-color: $transparent;
+    padding: px-to-rem(0);
+    height: px-to-rem(40);
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+
+    @include breakpoint(desktop, min-width) {
+      display: none;
+    }
+
+    &--icon {
+      @include browser-prefix('transition', 'all 500ms ease');
+      display: block;
+      height: px-to-rem(5);
+      width: px-to-rem(40);
+      background-color: $bluejay;
+    }
+
+    &--opened {
+      @include breakpoint(desktop, max-width) {
+        .navigation__burger-menu--icon {
+          position: relative;
+
+          &:first-child {
+            transform: rotate(40deg);
+            top: px-to-rem(10);
+          }
+
+          &:nth-child(2) {
+            display: none;
+          }
+
+          &:last-child {
+            transform: rotate(-45deg);
+            top: px-to-rem(-10);
+          }
+        }
+      }  
+    }
+  }
+}
+
+.overlay {
+  opacity: 0;
+  height: calc(100% - 54px);
+  width: 100%;
+  position: absolute;
+  top: px-to-rem(54);
+  background-color: rgba($bluejay, .9);
+  z-index: -1;
+  cursor: pointer;
+
+  &__opened {
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+.navigation-sticky .navigation {
+  position: fixed;
+  top: px-to-rem(0);
+  animation: stickAnim 0.3s;
+}
+
+@keyframes stickAnim {
+  0% {
+    transform: translateY(-86px);
+  }
+  
+  100% {
+    transform: translateY(0);
+  }
+}
+
+:root{
+  scroll-behavior: smooth;
+}

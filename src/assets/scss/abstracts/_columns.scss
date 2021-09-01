@@ -1,0 +1,88 @@
+.section-block {
+  padding: px-to-rem(50) px-to-rem(0);
+}
+
+.container {
+  margin: px-to-rem(0) auto;
+  max-width: 1200px;
+  padding: px-to-rem(0) px-to-rem(15);
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--spaced {
+    justify-content: space-between;
+  }
+
+  &--centered {
+    justify-content: center;
+  }
+}
+
+.column {
+  position: relative;
+  padding-right: px-to-rem(15);
+  padding-left: px-to-rem(15);
+  width: 100%;
+
+  &--no-spacing {
+    padding-right: px-to-rem(0);
+    padding-left: px-to-rem(0);
+  }
+
+  &.column--5 {
+    @include breakpoint(smallDesktop, min-width) {
+      flex: 0 0 calc(20% - 30px);
+    }
+
+    @include breakpoint(largeTablet, min-width) {
+      @include breakpoint(smallDesktop, max-width) {
+        flex: 0 0 calc(25% - 30px);
+      }
+    }
+
+    @include breakpoint(tablet, min-width) {
+      @include breakpoint(largeTablet, max-width) {
+        flex: 0 0 calc(33.33% - 30px);
+      }
+    }
+
+    @include breakpoint(mobile, min-width) {
+      @include breakpoint(tablet, max-width) {
+        flex: 0 0 calc(50% - 30px);
+      }
+    }
+  }
+
+  &.column--4 {
+    @include breakpoint(desktop, min-width) {
+      flex: 0 0 calc(25% - 30px);
+    }
+
+    @include breakpoint(tablet, min-width) {
+      @include breakpoint(desktop, max-width) {
+        flex: 0 0 calc(50% - 30px);
+      }
+    }
+  }
+
+  &.column--3 {
+    @include breakpoint(desktop, min-width) {
+      flex: 0 0 calc(33.33% - 30px);
+    }
+
+    @include breakpoint(tablet, min-width) {
+      @include breakpoint(desktop, max-width) {
+        flex: 0 0 calc(50% - 30px);
+      }
+    }
+  }
+
+  &.column--2 {
+    @include breakpoint(desktop, min-width) {
+      flex: 0 0 calc(50% - 30px);
+    }
+  }
+}

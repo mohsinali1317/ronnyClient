@@ -1,0 +1,105 @@
+// available font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// available font styles
+$font-style-normal: normal;
+$font-style-italic: italic;
+
+// Font-family
+$font-family-sketch-bold: 'Sketch-Bold', sans-serif;
+$font-family-proxima: 'Proxima-Nova', sans-serif;
+$font-family-ubuntu: 'Ubuntu', sans-serif;
+
+// base directory with fonts
+$fonts-base: '/src/assets/fonts';
+$font-proxima-light-italic: $fonts-base + '/Proxima-Nova-Light-Italic.woff2';
+$font-proxima-light: $fonts-base + '/Proxima-Nova-Light.woff2';
+$font-proxima-regular-italic: $fonts-base + '/Proxima-Nova-Regular-Italic.woff2';
+$font-proxima-regular: $fonts-base + '/Proxima-Nova-Regular.woff2';
+$font-sketch-block-bold: $fonts-base + '/SketchBlock-Bold.woff2';
+$font-ubuntu-medium: $fonts-base + '/Ubuntu-Medium.woff2';
+$font-ubuntu-bold: $fonts-base + '/Ubuntu-Bold.woff2';
+
+// base font-face rules
+@font-face {
+  font-family: 'Sketch-Bold';
+  src: url($font-sketch-block-bold);
+  font-weight: $font-weight-medium;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url($font-proxima-light);
+  font-weight: $font-weight-light;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url($font-proxima-light-italic);
+  font-weight: $font-weight-light;
+  font-style: $font-style-italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url($font-proxima-regular);
+  font-weight: $font-weight-normal;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima-Nova';
+  src: url($font-proxima-regular-italic);
+  font-weight: $font-weight-normal;
+  font-style: $font-style-italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url($font-ubuntu-medium);
+  font-weight: $font-weight-medium;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url($font-ubuntu-bold);
+  font-weight: $font-weight-bold;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+:root {
+  --font-smallest-print: #{$font-weight-normal 0.688rem/0.688rem $font-family-proxima};
+  --font-small-print: #{$font-weight-normal 0.813rem/0.813rem $font-family-proxima};
+  --font-body-copy: #{$font-weight-light 1rem/1.438rem $font-family-proxima};
+  --font-large-body-light-copy: #{$font-weight-light 1.375rem/2rem $font-family-proxima};
+  --font-large-body-copy: #{$font-weight-normal 1.563rem/2rem $font-family-proxima};
+  --font-bold-body-copy: #{$font-weight-medium 1.375rem/1.75rem $font-family-sketch-bold};
+  --font-heading-h1: #{$font-weight-medium 3.125rem/3.5rem $font-family-sketch-bold};
+  --font-heading-h1-mobile: #{$font-weight-medium 1.625rem/2rem $font-family-sketch-bold};
+  --font-subheading-h2: #{$font-weight-bold 3.125rem/3.5rem $font-family-ubuntu};
+  --font-subheading-h2-tablet: #{$font-weight-bold 2.25rem/2.438rem $font-family-ubuntu};
+  --font-subheading-h2-mobile: #{$font-weight-bold 1.625rem/2rem $font-family-ubuntu};
+  --font-heading-h2: #{$font-weight-medium 2.25rem/2.438rem $font-family-sketch-bold};
+  --font-heading-h3: #{$font-weight-medium 1.875rem/2.063rem $font-family-sketch-bold};
+  --font-heading-h4: #{$font-weight-medium 1.563rem/1.875rem $font-family-ubuntu};
+  --font-heading-h5: #{$font-weight-normal 1.125rem/1.5rem $font-family-proxima};
+  --font-heading-h5-bold: #{$font-weight-medium 1.125rem/1.5rem $font-family-ubuntu};
+  --font-education-about-heading-desktop: #{$font-weight-bold 2.875rem/3.313rem $font-family-ubuntu};
+  --font-education-about-heading-mobile: #{$font-weight-bold 1.375rem/1.75rem $font-family-ubuntu};
+  --font-education-big-heading-desktop: #{$font-weight-bold 1.875rem/1.875rem $font-family-ubuntu};
+  --font-education-big-heading-mobile: #{$font-weight-bold 1.5rem/1.5rem $font-family-ubuntu};
+  --font-education-small-heading: #{$font-weight-bold 1rem/1rem $font-family-ubuntu};
+}

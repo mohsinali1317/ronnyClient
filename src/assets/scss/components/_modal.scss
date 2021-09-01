@@ -1,0 +1,87 @@
+.modal {
+  &__overlay {
+    position: absolute;
+    z-index: 4;
+    left: px-to-rem(0);
+    top: px-to-rem(0);
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, .85);
+    display: none;
+    
+    &.is-visible {
+      display: block;
+    }
+  }
+
+  &__heading {
+    text-transform: capitalize;
+  }
+
+  &__copy {
+    margin-bottom: px-to-rem(20);
+  }
+
+  &__link:link,
+  &__link:visited {
+    @include browser-prefix('border-radius', '4px');
+    font: var(--font-education-small-heading);
+    text-decoration: none;
+    color: $bluejay;
+    text-transform: uppercase;
+    padding: px-to-rem(10) px-to-rem(28);
+    display: block;
+    border: 1px solid $bluejay;
+    width: fit-content;
+  }
+
+  &__popup {
+    height: px-to-rem(475);
+    width: calc(100% - 30px);
+    max-width: px-to-rem(650);
+    background-color: $white;
+    position: fixed;
+    left: px-to-rem(15);
+    top: calc(51px + 15px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 300ms ease-in-out;
+    z-index: 5;
+    box-shadow: 0 px-to-rem(8) px-to-rem(16) rgba($black, .15);
+
+    @include breakpoint(mobile, min-width) {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      height: auto;
+    }
+    
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+      overflow-y: scroll;
+    }
+
+    &--header {
+      border-bottom: 1px solid $black;
+      padding: px-to-rem(15);
+      position: relative;
+      display: flex;
+      align-items: center;
+      flex-flow: row-reverse;
+      justify-content: space-between;
+    }
+
+    &--body {
+      padding: px-to-rem(15);
+    }
+  }
+
+  &__close {
+    @include browser-prefix('appearance', 'none');
+    border: none;
+    display: block;
+    cursor: pointer;
+    background-color: $transparent;
+  }
+}

@@ -1,0 +1,99 @@
+.contact {
+  &__copy {
+    margin-bottom: px-to-rem(25);
+    color: $black;
+
+    &--link:link,
+    &--link:visited {
+      color: $bluejay;
+      text-decoration: none;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__methods {
+    display: block;
+
+    @include breakpoint(tablet, min-width) {
+      display: flex;
+    }
+
+    &--block {
+      width: 100%;
+
+      @include breakpoint(tablet, min-width) {
+        width: 33.33%;
+        padding: px-to-rem(0) px-to-rem(15);
+      }
+    }
+
+    &--image {
+      content: '';
+      width: px-to-rem(36);
+      height: px-to-rem(36);
+      background-image: url('../media/images/icons/contact.png');
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: px-to-rem(-18);
+      margin-left: px-to-rem(-18);
+    }
+
+    &--icon {
+      @include browser-prefix('border-radius', '50%');
+      width: px-to-rem(80);
+      height: px-to-rem(80);
+      margin: px-to-rem(0) auto;
+      border: 5px solid $white;
+      position: relative;
+
+      &-red {
+        @include browser-prefix('box-shadow', '0 0 0 1px #e15846');
+        background-color: $red;
+
+        .contact__methods--image {
+          background-position: px-to-rem(-36) px-to-rem(0);
+        }
+      }
+
+      &-orange {
+        @include browser-prefix('box-shadow', '0 0 0 1px #f67a00');
+        background-color: $orange;
+
+        .contact__methods--image {
+          background-position: px-to-rem(0) px-to-rem(0);
+        }
+      }
+
+      &-green {
+        @include browser-prefix('box-shadow', '0 0 0 1px #00b012');
+        background-color: $green;
+
+        .contact__methods--image {
+          background-position: px-to-rem(-72) px-to-rem(0);
+        }
+      }
+    }
+
+    &--seperator {
+      display: block;
+      width: px-to-rem(60);
+      margin: px-to-rem(20) auto;
+      border-style: solid;
+      height: px-to-rem(5);
+
+      &-red {
+        background-color: $red;
+      }
+
+      &-orange {
+        background-color: $orange;
+      }
+
+      &-green {
+        background-color: $green;
+      }
+    }
+  }
+}

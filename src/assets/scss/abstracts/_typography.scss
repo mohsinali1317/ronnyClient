@@ -1,0 +1,39 @@
+h1 {
+  @media screen and (max-width: 575px) {
+    font: var(--font-heading-h1-mobile);
+  }
+
+  @include breakpoint(mobile, min-width) {
+    @include breakpoint(desktop, max-width) {
+      font: var(--font-heading-h2);
+    }
+  }
+
+  @include breakpoint(desktop, min-width) {
+    font: var(--font-heading-h1);
+  }
+}
+
+h2 {
+  font: var(--font-heading-h2);
+}
+  
+h3 {
+  font: var(--font-heading-h3);
+}
+  
+h4 {
+  font: var(--font-heading-h4);
+}
+
+h5 {
+  font: var(--font-heading-h5);
+}
+
+p {
+  font: var(--font-body-copy);
+}
+
+.text-center {
+  text-align: center;
+}
